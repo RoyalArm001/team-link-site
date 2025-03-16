@@ -1,54 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hy">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ✅ SEO Title & Description -->
+<title>Team Link - The Ultimate Team Experience</title>
+<meta name="description" content="Join Team Link and explore interactive games, team-building activities, and fun challenges!">
+<meta name="keywords" content="team link, team building, fun games, teamwork">
+<meta name="author" content="Team Link">
+
+<!-- ✅ Open Graph (Facebook & Twitter preview) -->
+<meta property="og:title" content="Team Link - The Ultimate Team Experience">
+<meta property="og:description" content="Join Team Link and explore interactive games, team-building activities, and fun challenges!">
+<meta property="og:image" content="https://yoursite.com/images/team-link-banner.jpg">
+<meta property="og:url" content="https://yoursite.com">
+<meta property="og:type" content="website">
+
     <title>Team Link</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to Team Link</h1>
-        <p>Connecting People Through Fun & Teamwork!</p>
+    <!-- Նավիգացիա -->
+    <nav>
+        <div class="logo">
+            <a href="index.html">Team Link</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="about/about.html">About</a></li>
+            <li><a href="games/games.html">Games</a></li>
+            <li><a href="contact/contact.html">Contact</a></li>
+            <li><a href="auth/login.html">Login</a></li>
+            <li><a href="settings.html">Settings</a></li> <!-- ✅ Ավելացված է -->
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+    
+
+    <!-- Գունային ընտրացանկ -->
+    <div class="theme-selector">
+        <button onclick="setTheme('light')">🌞 Light</button>
+        <button onclick="setTheme('dark')">🌙 Dark</button>
+        <button onclick="setTheme('blue')">🔵 Blue</button>
+        <button onclick="setTheme('sepia')">🟤 Sepia</button>
+        <button onclick="setTheme('system')">🖥 System</button>
+    </div>
+    
+
+    <!-- Հերոսական հատված -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Բարի Գալուստ Team Link</h1>
+            <p>Միացեք մեր թիմին և ստեղծեք անմոռանալի պահեր:</p>
+            <div id="clock"></div>
+
+            <a href="games/games.html" class="btn">Դիտել Խաղերը</a>
+        </div>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="games.html">Games</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="login.html">Login</a></li>
-        </ul>
-    </nav>
+    <!-- Բաժիններ (3 շարքով 9 հատ) -->
+    <div class="sections">
+        <section class="section" style="background-image: url('https://source.unsplash.com/300x200/?nature');">
+            <h3>Բնություն</h3>
+        </section>
+        <section class="section" style="background-image: url('https://source.unsplash.com/300x200/?city');">
+            <h3>Քաղաք</h3>
+        </section>
+        <section class="section" style="background-image: url('https://source.unsplash.com/300x200/?tech');">
+            <h3>Տեխնոլոգիա</h3>
+        </section>
+        <section class="section" style="background-image: url('https://source.unsplash.com/300x200/?food');">
+            <h3>Սնունդ</h3>
+        </section>
+        <section class="section" style="background-image: url('https://source.unsplash.com/300x200/?travel');">
+            <h3>Ճանապարհորդություն</h3>
+        </section>
+        <section class="section" style="background-image: url('https://source.unsplash.com/300x200/?art');">
+            <h3>Արվեստ</h3>
+        </section>
+        <section class="section" style="background-image: url('https://source.unsplash.com/300x200/?animals');">
+            <h3>Կենդանիներ</h3>
+        </section>
+        <section class="section" style="background-image: url('https://source.unsplash.com/300x200/?sports');">
+            <h3>Սպորտ</h3>
+        </section>
+        <section class="section" style="background-image: url('https://source.unsplash.com/300x200/?music');">
+            <h3>Երաժշտություն</h3>
+        </section>
+    </div>
 
-    <section class="content">
-        <div class="grid">
-            <a href="about.html">
-                <img src="https://source.unsplash.com/300x200/?team,work" alt="About Us">
-                <h3>About Us</h3>
-            </a>
-            <a href="games.html">
-                <img src="https://source.unsplash.com/300x200/?games,fun" alt="Our Games">
-                <h3>Our Games</h3>
-            </a>
-            <a href="contact.html">
-                <img src="https://source.unsplash.com/300x200/?contact,communication" alt="Contact Us">
-                <h3>Contact Us</h3>
-            </a>
-        </div>
-    </section>
-
-    <aside class="login-section">
-        <h3>Member Login</h3>
-        <p>Access exclusive content and team events.</p>
-        <a href="login.html" class="btn">Login</a>
-        <a href="signup.html" class="btn">Sign Up</a>
-    </aside>
-
+    <!-- Footer -->
     <footer>
-        <p>© 2025 Team Link. All rights reserved.</p>
+        <div class="footer-content">
+            <p>© 2025 Team Link. Բոլոր իրավունքները պաշտպանված են:</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
     </footer>
+
+    <!-- Սքրոլ դեպի վերև կոճակ -->
+    <button id="scrollToTopBtn" title="Go to top">⬆️ Top</button>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
