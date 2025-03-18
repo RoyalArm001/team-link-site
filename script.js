@@ -55,3 +55,85 @@ document.addEventListener("DOMContentLoaded", function () {
     let savedTheme = localStorage.getItem("theme") || "system";
     setTheme(savedTheme);
 });
+
+
+// WebGL անիմացիայի համար
+const canvas = document.getElementById('landscape');
+const gl = canvas.getContext('webgl');
+
+if (!gl) {
+  console.error('WebGL is not supported in your browser.');
+}
+
+// Vertex shader
+const vertexShaderSource = `
+  attribute vec4 a_position;
+  void main() {
+    gl_Position = a_position;
+  }
+`;
+
+// Fragment shader
+const fragmentShaderSource = `
+  precision mediump float;
+  void main() {
+    gl_FragColor = vec4(0.0, 0.5, 1.0, 1.0); // Կապույտ գույն
+  }
+`;
+
+// Shader կոմպիլյացիա
+function compileShader(gl, source, type) {
+  const shader = gl.createShader(type);
+  gl.shaderSource(shader, source);
+  gl.compileShader(shader);
+
+  if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+    console.error('Shader compilation error:', gl.getShaderInfoLog(shader));
+    gl.deleteShader(shader);
+    return null;
+  }
+
+  return shader;
+}
+
+const vertexShader = compileShader(gl, vertexShaderSource, gl.VERTEX_SHADER);
+const fragmentShader = compileShader(gl, fragmentShaderSource, gl.FRAGMENT_SHADER);
+
+// Shader program
+const program = gl.createProgram();
+gl.attachShader(program, vertexShader);
+gl.attachShader(program, fragmentShader);
+gl.linkProgram(program);
+
+if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+  console.error('Program linking error:', gl.getProgramInfoLog(program));
+}
+
+gl.useProgram(program);
+
+// Buffer
+const positionBuffer = gl.createBuffer();
+gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+
+const positions = [
+  -1.0, -1.0,
+  1.0, -1.0,
+  -1.0, 1.0,
+  1.0, 1.0,
+];
+
+gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positions), gl.STATIC_DRAW);
+
+const positionAttributeLocation = gl.getAttribLocation(program, 'a_position');
+gl.enableVertexAttribArray(positionAttributeLocation);
+gl.vertexAttribPointer(positionAttributeLocation, 2, gl.FLOAT, false, 0, 0);
+
+// Render
+function render() {
+  gl.clearColor(0.0, 0.0, 0.0, 1.0);
+  gl.clear(gl.COLOR_BUFFER_BIT);
+  gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+  requestAnimationFrame(render);
+}
+
+render();
