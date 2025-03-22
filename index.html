@@ -654,17 +654,16 @@
 	<script src="./js/vendor/charming.min.js"></script>
 	<script src="./js/vendor/TweenMax.min.js"></script>
 	<script src="./js/demo3.js"></script>
-	<!DOCTYPE html>
-
-  <meta charset="UTF-8">
+	<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Scroll to Top Button</title>
   <style>
-    .button {
+    /* Կնոպկայի ոճ */
+    .scroll-to-top-btn {
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      background-color: rgb(20, 20, 20);
+      background-color: rgba(20, 20, 20, 0.7); /* Թափանցիկ սև ֆոն */
       border: none;
       font-weight: 600;
       display: flex;
@@ -672,36 +671,39 @@
       justify-content: center;
       box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
       cursor: pointer;
-      transition-duration: 0.3s;
+      transition: all 0.3s ease;
       overflow: hidden;
       position: fixed;
       bottom: 20px;
       right: 20px;
       z-index: 1000;
+      opacity: 0; /* Սկզբում անտեսանելի */
+      visibility: hidden; /* Սկզբում թաքնված */
     }
 
-    .svgIcon {
+    .scroll-to-top-btn.show {
+      opacity: 1; /* Ցուցադրել */
+      visibility: visible; /* Ցուցադրել */
+    }
+
+    .scroll-to-top-btn .icon {
       width: 12px;
-      transition-duration: 0.3s;
+      transition: all 0.3s ease;
     }
 
-    .svgIcon path {
-      fill: white;
+    .scroll-to-top-btn .icon path {
+      fill: white; /* Սպիտակ սլաք */
     }
 
-    .button:hover {
-      width: 140px;
-      border-radius: 50px;
-      transition-duration: 0.3s;
-      background-color: rgb(181, 160, 255);
-      align-items: center;
+    .scroll-to-top-btn:hover {
+      background-color: rgba(181, 160, 255, 0.7); /* Թափանցիկ մանուշակագույն ֆոն */
     }
 
-    .button:hover .svgIcon {
+    .scroll-to-top-btn:hover .icon {
       transform: translateY(-200%);
     }
 
-    .button::before {
+    .scroll-to-top-btn::before {
       position: absolute;
       bottom: -20px;
       content: "Back to Top";
@@ -709,31 +711,46 @@
       font-size: 0px;
     }
 
-    .button:hover::before {
+    .scroll-to-top-btn:hover::before {
       font-size: 13px;
       opacity: 1;
       bottom: unset;
-      transition-duration: 0.3s;
+      transition: all 0.3s ease;
     }
   </style>
-
-  <button id="scrollToTopButton" class="button">
-    <svg viewBox="0 0 384 512" class="svgIcon">
+</head>
+<body>
+  <!-- Կնոպկա -->
+  <button id="scrollToTopButton" class="scroll-to-top-btn">
+    <svg viewBox="0 0 384 512" class="icon">
       <path
         d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
       ></path>
     </svg>
   </button>
 
+  <!-- JavaScript -->
   <script>
-    document.getElementById('scrollToTopButton').addEventListener('click', function() {
+    const scrollToTopButton = document.getElementById('scrollToTopButton');
+
+    // Ստուգել, թե երբ է էջը իջեցվել բավականին ներքև
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 300) { // Եթե էջը իջեցվել է 300px-ից ավելի
+        scrollToTopButton.classList.add('show'); // Ցուցադրել կնոպկան
+      } else {
+        scrollToTopButton.classList.remove('show'); // Թաքցնել կնոպկան
+      }
+    });
+
+    // Սեղմելու դեպքում բարձրանալ դեպի վեր
+    scrollToTopButton.addEventListener('click', function() {
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
       });
     });
   </script>
-
+	
 </body>
 
 </html>
