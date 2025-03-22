@@ -1,0 +1,60 @@
+.video-js .vjs-fullscreen-control,.vjs-icon-fullscreen-enter {
+.video-js .vjs-fullscreen-control:before,.vjs-icon-fullscreen-enter:before {
+.video-js.vjs-fullscreen .vjs-fullscreen-control,.vjs-icon-fullscreen-exit {
+.video-js.vjs-fullscreen .vjs-fullscreen-control:before,.vjs-icon-fullscreen-exit:before {
+.vjs-icon-cog {
+.vjs-icon-cog:before {
+.vjs-icon-circle-outline {
+.vjs-icon-circle-outline:before {
+.vjs-icon-circle-inner-circle {
+.vjs-icon-circle-inner-circle:before {
+.vjs-icon-hd {
+.vjs-icon-hd:before {
+.vjs-icon-linkedin {
+.vjs-icon-linkedin:before {
+.vjs-icon-twitter {
+.vjs-icon-twitter:before {
+.vjs-icon-tumblr {
+.vjs-icon-tumblr:before {
+.video-js {
+.video-js:-moz-full-screen {
+.video-js:-webkit-full-screen {
+.video-js ul {
+.video-js.vjs-16-9,.video-js.vjs-4-3,.video-js.vjs-fluid {
+.video-js.vjs-16-9 {
+.video-js.vjs-4-3 {
+.video-js.vjs-fill {
+.video-js .vjs-tech {
+.vjs-full-window .video-js.vjs-fullscreen {
+.video-js.vjs-fullscreen {
+.vjs-hidden {
+.video-js .vjs-offscreen {
+.vjs-lock-showing {
+.vjs-no-js {
+.vjs-menu .vjs-menu-content {
+.vjs-menu li {
+.vjs-menu li:focus,.vjs-menu li:hover {
+.vjs-menu li.vjs-menu-title {
+.video-js .vjs-control {
+.video-js .vjs-control:before {
+.video-js .vjs-control:focus,.video-js .vjs-control:focus:before,.video-js .vjs-control:hover:before {
+.video-js .vjs-control-text {
+.video-js .vjs-slider {
+.video-js .vjs-slider:focus {
+.video-js .vjs-volume-control {
+.video-js .vjs-volume-level {
+.video-js .vjs-volume-level:before {
+.video-js .vjs-live-control {
+.video-js .vjs-time-control {
+.vjs-time-divider {
+.vjs-live .vjs-time-divider {
+.vjs-subtitles {
+.vjs-tt-cue {
+.video-js .vjs-fullscreen-control {
+.video .intrinsic__item .video-js {
+.video .video-js {
+.vjs-etq-skin .vjs-control:before {
+.vjs-etq-skin .vjs-fullscreen-control:before {
+.vjs-etq-skin .vjs-fullscreen-control[title=Fullscreen]:before {
+.vjs-etq-skin .vjs-fullscreen-control[title=Non-Fullscreen]:before {
+.vjs-etq-skin .vjs-slider {
