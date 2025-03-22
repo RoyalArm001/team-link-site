@@ -1,83 +1,36 @@
-/* Մենյուի ոճ */
-.top-right-menu {
-  padding: 0.5rem;
-  background-color: #fff;
-  position: fixed;
-  top: 20px;
-  right: 20px;
+/* Մենյուի CSS ոճեր */
+.menu {
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
-  flex-direction: column;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.075);
-  z-index: 1000;
+  justify-content: space-around;
 }
 
-/* Հղումների ոճ */
-.menu-link {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 8px;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  transform-origin: center left;
-  transition: width 0.2s ease-in;
+.menu ul li {
+  margin: 0 10px;
+}
+
+.menu ul li a {
+  color: white;
   text-decoration: none;
-  color: inherit;
+  display: flex;
+  align-items: center;
 }
 
-.menu-link:before {
-  position: absolute;
-  z-index: -1;
-  content: "";
-  display: block;
-  border-radius: 8px;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  transform: translateX(100%);
-  transition: transform 0.2s ease-in;
-  transform-origin: center right;
-  background-color: #eee;
+.menu ul li a svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  fill: currentColor; /* SVG-ի գույնը կհամապատասխանի տեքստի գույնին */
 }
 
-.menu-link:hover,
-.menu-link:focus {
-  outline: 0;
-  width: 130px;
-}
-
-.menu-link:hover:before,
-.menu-link:hover .menu-title {
-  transform: translateX(0);
-  opacity: 1;
-}
-
-/* Սլաքի ոճ */
-.menu-icon {
-  width: 28px;
-  height: 28px;
-  display: block;
-  flex-shrink: 0;
-  left: 18px;
-  position: absolute;
-}
-
-.menu-icon svg {
-  width: 28px;
-  height: 28px;
-}
-
-/* Տեքստի ոճ */
-.menu-title {
-  transform: translateX(100%);
-  transition: transform 0.2s ease-in;
-  transform-origin: center right;
-  display: block;
-  text-align: center;
-  text-indent: 28px;
-  width: 100%;
+.menu ul li a:hover {
+  color: #ffcc00;
 }
