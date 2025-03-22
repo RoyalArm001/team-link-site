@@ -72,10 +72,7 @@ header {
     cursor: pointer;
     transition-duration: 0.3s;
     overflow: hidden;
-    position: fixed; /* Կնոպկան ամրագրված է էջում */
-    bottom: 20px; /* Ներքևից հեռավորություն */
-    right: 20px; /* Աջից հեռավորություն */
-    z-index: 1000; /* Կնոպկան միշտ վերև լինի */
+    position: relative;
   }
   
   .svgIcon {
@@ -96,6 +93,8 @@ header {
   }
   
   .button:hover .svgIcon {
+    /* width: 20px; */
+    transition-duration: 0.3s;
     transform: translateY(-200%);
   }
   
@@ -104,6 +103,7 @@ header {
     bottom: -20px;
     content: "Back to Top";
     color: white;
+    /* transition-duration: .3s; */
     font-size: 0px;
   }
   
@@ -111,5 +111,7 @@ header {
     font-size: 13px;
     opacity: 1;
     bottom: unset;
+    /* transform: translateY(-30px); */
     transition-duration: 0.3s;
   }
+  
