@@ -1,1 +1,0 @@
-/workspaces/team-link-site/./assets/scripts/firebase-config.js

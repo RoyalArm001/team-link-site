@@ -1,1 +1,0 @@
-/workspaces/team-link-site/./js/vendor/Sky.js
