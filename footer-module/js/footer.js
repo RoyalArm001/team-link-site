@@ -1,37 +1,38 @@
-// FOOTER MODULE - JavaScript Logic
+// FOOTER MODULE - JavaScript
 document.addEventListener('DOMContentLoaded', () => {
-  // Տարեթվի ավտոմատ թարմացում
-  document.getElementById('current-year').textContent = new Date().getFullYear();
-  
-  // SVG սպրայթի բեռնում
-  fetch('/assets/icons.svg')
-    .then(response => response.text())
-    .then(svg => {
-      document.body.insertAdjacentHTML('afterbegin', svg);
-    });
+  // 1. Բեռնել ֆուտերը
+  const loadFooter = () => {
+    fetch('./footer.html')
+      .then(res => res.text())
+      .then(html => {
+        const container = document.createElement('div');
+        container.innerHTML = html;
+        document.body.appendChild(container);
+        
+        // 2. Բեռնել CSS
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = './footer.css';
+        document.head.appendChild(link);
+        
+        // 3. Սկրիպտի ավտոմատ գործարկում
+        initFooter();
+      });
+  };
+
+  // 4. Ֆուտերի լոգիկա
+  const initFooter = () => {
+    // Տարեթիվ
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // SVG սպրայթի բեռնում
+    fetch('./assets/icons.svg')
+      .then(res => res.text())
+      .then(svg => {
+        document.body.insertAdjacentHTML('afterbegin', svg);
+      });
+  };
+
+  // Գործարկել
+  loadFooter();
 });
-
-// Ֆուտերի դինամիկ բեռնում
-function loadFooter() {
-  fetch('/footer-module/footer.html')
-    .then(response => response.text())
-    .then(html => {
-      const footerContainer = document.createElement('div');
-      footerContainer.innerHTML = html;
-      document.body.appendChild(footerContainer);
-      
-      // CSS-ի բեռնում
-      const link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = '/footer-module/css/footer.css';
-      document.head.appendChild(link);
-    });
-}
-
-// Կանչել ֆունկցիան էջի բեռնվելուց հետո
-if (!document.getElementById('footer-container')) {
-  const container = document.createElement('div');
-  container.id = 'footer-container';
-  document.body.appendChild(container);
-}
-loadFooter();

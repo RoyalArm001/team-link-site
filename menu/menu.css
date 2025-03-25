@@ -1,3 +1,4 @@
+/* Menu container */
 .tl-menu {
   position: fixed;
   top: 20px;
@@ -5,50 +6,61 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  z-index: 9999; /* Բարձր արժեք, որ մնա վերևում */
+  z-index: 9999 !important;
 }
 
+/* Buttons */
 .tl-btn {
   position: relative;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   padding: 12px;
-  display: inline-block; /* Փոխում ենք flex-ից */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  width: 50px;
+  height: 50px;
+  pointer-events: auto !important;
   text-decoration: none;
-  cursor: pointer;
-  min-width: 40px;
-  min-height: 40px;
+  border: 2px solid transparent; /* Ավելացվել է transition-ի համար */
 }
 
+/* Hover effect - Նարնջագույն ու թափանցիկ */
 .tl-btn:hover {
-  background: rgba(76, 175, 80, 0.5);
-  transform: scale(1.05);
+  background: rgba(255, 165, 0, 0.5); /* Orange transparency */
+  transform: scale(1.1);
+  border-color: rgba(255, 165, 0, 0.8); /* Նարնջագույն եզր */
+  box-shadow: 0px 0px 10px rgba(255, 165, 0, 0.6);
 }
 
+/* Icons */
 .tl-icon {
   width: 24px;
   height: 24px;
-  pointer-events: none; /* Նկարն ինքը չպետք է խանգարի */
+  pointer-events: none;
 }
 
+/* Tooltip */
 .tl-btn::after {
   content: attr(data-title);
   position: absolute;
   top: -40px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(255, 165, 0, 0.9); /* Ավելի հստակ նարնջագույն */
   color: white;
-  padding: 4px 8px;
+  padding: 6px 10px;
   border-radius: 4px;
   font-size: 14px;
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
   pointer-events: none;
   white-space: nowrap;
-  z-index: -1; /* Tooltip-ը չի կարող խանգարել սեղմմանը */
 }
 
+/* Tooltip-ը ավելի նկատելի դարձնենք hover-ի ժամանակ */
 .tl-btn:hover::after {
   opacity: 1;
+  transform: translateX(-50%) translateY(-5px);
 }

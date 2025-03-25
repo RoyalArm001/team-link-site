@@ -750,17 +750,8 @@
   </script>
   <!-- Կայքի բովանդակություն -->
 
-  <!-- Ֆուտերի տեղադրում -->
-  <div id="footer-placeholder"></div>
-  
-  <!-- Բեռնել ֆուտերը -->
-  <script>
-    fetch('/footer.html')
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('footer-placeholder').innerHTML = html;
-      });
-  </script>
+  <div id="footer-container"></div>
+  <script src="./footer-module/footer.js"></script>
 </body>
 
 </html>
