@@ -40,3 +40,28 @@
     padding: 10px;
   }
 }
+/* Tooltip ֆունկցիոնալ */
+.tl-btn {
+  position: relative;
+}
+
+.tl-btn::after {
+  content: attr(data-title);
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.tl-btn:hover::after {
+  opacity: 1;
+}
