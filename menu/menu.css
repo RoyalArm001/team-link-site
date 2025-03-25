@@ -13,11 +13,8 @@
   background: rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   padding: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  pointer-events: auto; /* Ակտիվացնում ենք սեղմումը */
+  display: inline-block; /* Փոխում ենք flex-ից */
+  text-decoration: none;
   cursor: pointer;
   min-width: 40px;
   min-height: 40px;
