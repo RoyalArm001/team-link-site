@@ -748,11 +748,19 @@
       });
     });
   </script>
-	  <!-- Կայքի բովանդակություն -->
-	  <div id="footer-container"></div>
+  <!-- Կայքի բովանդակություն -->
+
+  <!-- Ֆուտերի տեղադրում -->
+  <div id="footer-placeholder"></div>
   
-	  <!-- Բեռնել ֆուտերը -->
-	  <script src="/footer-module/js/footer.js"></script>
+  <!-- Բեռնել ֆուտերը -->
+  <script>
+    fetch('/footer.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('footer-placeholder').innerHTML = html;
+      });
+  </script>
 </body>
 
 </html>

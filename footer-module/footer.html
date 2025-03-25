@@ -1,33 +1,32 @@
 <!-- 
-  FOOTER MODULE - HTML Structure
-  Տեղադրելու համար ավելացրեք <div id="footer-container"></div> ձեր HTML-ում
+  FOOTER - Պարզ և աշխատող տարբերակ
+  Տեղադրելու համար ավելացրեք այս կոդը յուրաքանչյուր էջի վերջում՝
+  <div id="footer-placeholder"></div>
 -->
 <footer class="site-footer">
   <div class="footer-content">
-    <!-- Լոգո և տարեթիվ -->
     <div class="footer-brand">
-      <a href="/" class="logo-link" aria-label="RoyalArm Home">
-        <svg class="logo-icon" viewBox="0 0 24 24"><path d="M23,12L20.56..."/></svg>
+      <a href="/" class="logo-link">
+        <svg class="logo-icon" viewBox="0 0 24 24"><path d="M12 2L4 12l8 10 8-10z"/></svg>
         <span>RoyalArm</span>
       </a>
-      <p class="copyright">© <span id="current-year"></span> ‧ All rights reserved</p>
+      <p class="copyright">© <span id="year"></span> ‧ All rights reserved</p>
     </div>
-
-    <!-- Հղումներ -->
-    <nav class="footer-links" aria-label="Footer Navigation">
-      <a href="/about" class="footer-link">About</a>
-      <a href="/contact" class="footer-link">Contact</a>
-      <a href="/games" class="footer-link">Games</a>
-    </nav>
-
-    <!-- Սոցցանցեր -->
-    <div class="footer-social">
-      <a href="#" class="social-icon" aria-label="Facebook">
-        <svg class="icon-facebook"><use href="#icon-facebook"></use></svg>
-      </a>
-      <a href="#" class="social-icon" aria-label="Instagram">
-        <svg class="icon-instagram"><use href="#icon-instagram"></use></svg>
-      </a>
+    <div class="footer-links">
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/games">Games</a>
     </div>
   </div>
 </footer>
+
+<script>
+  // Ավտոմատ տարեթիվ
+  document.getElementById('year').textContent = new Date().getFullYear();
+  
+  // CSS-ի բեռնում
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = '/css/footer.css';
+  document.head.appendChild(link);
+</script>
