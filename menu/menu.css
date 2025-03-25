@@ -1,4 +1,4 @@
-/* /menu/menu.css */
+/* /menu/menu.css - Ամբողջական CSS */
 .tl-menu {
   position: fixed;
   top: 20px;
@@ -10,11 +10,13 @@
 }
 
 .tl-btn {
+  position: relative;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   padding: 12px;
   display: flex;
   align-items: center;
+  justify-content: center;
   transition: all 0.3s ease;
 }
 
@@ -29,22 +31,7 @@
   pointer-events: none;
 }
 
-/* Mobile տարբերակ */
-@media (max-width: 768px) {
-  .tl-menu {
-    flex-direction: row;
-    top: 10px;
-    right: 10px;
-  }
-  .tl-btn {
-    padding: 10px;
-  }
-}
-/* Tooltip ֆունկցիոնալ */
-.tl-btn {
-  position: relative;
-}
-
+/* Tooltip */
 .tl-btn::after {
   content: attr(data-title);
   position: absolute;
@@ -71,7 +58,7 @@
   .tl-menu {
     position: fixed;
     bottom: 0;
-    top: auto; /* Հեռացնում ենք վերևի տեղադրումը */
+    top: auto;
     left: 0;
     right: 0;
     width: 100%;
@@ -79,35 +66,19 @@
     justify-content: space-around;
     background: rgba(0, 0, 0, 0.7);
     padding: 10px 0;
-    backdrop-filter: blur(10px); /* Translucent էֆեկտ */
+    backdrop-filter: blur(10px);
     border-top: 1px solid #4CAF50;
     gap: 0;
   }
 
   .tl-btn {
-    padding: 8px;
+    padding: 10px;
     flex-grow: 1;
-    display: flex;
-    justify-content: center;
   }
 
-  .tl-icon {
-    width: 22px;
-    height: 22px;
-  }
-
-  /* Tooltip-ի հարմարեցում mobile-ի համար */
   .tl-btn::after {
     top: auto;
     bottom: 100%;
     background: #4CAF50;
-  }
-}
-@media (max-width: 768px) {
-  .tl-btn {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    margin: 0 auto;
   }
 }
