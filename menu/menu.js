@@ -25,10 +25,12 @@ document.addEventListener('DOMContentLoaded', function() {
   document.body.appendChild(menuContainer);
 });
 
-document.querySelectorAll('.tl-btn').forEach(btn => {
-  btn.addEventListener('click', (event) => {
-    console.log('Clicked:', btn.href);
-    event.stopPropagation(); // Արգելում ենք արտաքին event-ները
-    window.location.href = btn.href; // Հստակ ասում ենք՝ անցիր հղմանը
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.tl-btn').forEach(btn => {
+    btn.addEventListener('click', (event) => {
+      console.log('Clicked:', btn.href);
+      window.location.href = btn.href; // Դիմացն էլ գնում է հղմանը
+    });
   });
 });
+
