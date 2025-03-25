@@ -65,3 +65,49 @@
 .tl-btn:hover::after {
   opacity: 1;
 }
+
+/* Mobile տարբերակ (էկրանի լայնությունը ≤ 768px) */
+@media (max-width: 768px) {
+  .tl-menu {
+    position: fixed;
+    bottom: 0;
+    top: auto; /* Հեռացնում ենք վերևի տեղադրումը */
+    left: 0;
+    right: 0;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
+    backdrop-filter: blur(10px); /* Translucent էֆեկտ */
+    border-top: 1px solid #4CAF50;
+    gap: 0;
+  }
+
+  .tl-btn {
+    padding: 8px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .tl-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* Tooltip-ի հարմարեցում mobile-ի համար */
+  .tl-btn::after {
+    top: auto;
+    bottom: 100%;
+    background: #4CAF50;
+  }
+}
+@media (max-width: 768px) {
+  .tl-btn {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+  }
+}
