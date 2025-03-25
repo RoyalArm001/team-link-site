@@ -27,7 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.querySelectorAll('.tl-btn').forEach(btn => {
   btn.addEventListener('click', (event) => {
-    event.stopPropagation(); // Որպեսզի ուրիշ event-ներ չխանգարեն
-    window.location.href = btn.href;
+    console.log('Clicked:', btn.href);
+    event.stopPropagation(); // Արգելում ենք արտաքին event-ները
+    window.location.href = btn.href; // Հստակ ասում ենք՝ անցիր հղմանը
   });
 });
