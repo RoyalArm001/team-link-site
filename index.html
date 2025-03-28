@@ -188,6 +188,185 @@
 				padding: 0;
 			}
 		}
+		@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+html, body{
+  height: 100%;
+}
+body{
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding-top: 300px;
+}
+
+// Footer variables
+$footerBg: #000;
+$footerText: #fff;
+.container{
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.footer{
+  position:relative;
+  margin-top: 300px;
+  padding: 3rem 0;  
+  color: $footerText;
+  background : $footerBg;
+  margin-top: auto;
+  &__columns{
+    display:flex;
+    justify-content: space-between;
+  }
+  &__col{
+    &-title{
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+      display: flex;
+      align-items:center;
+      * ~ span{
+        margin-left: 1rem;
+      }
+    }
+  }
+  a{
+      display: flex;
+      align-items:center;
+    color: $footerText;
+    text-decoration: none;    
+      * ~ span{
+        margin-left: 1rem;
+      }
+  }
+  &__nav{
+    &-list{
+      display:flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  }
+  &__copyrights{
+    padding-top: 3rem;
+    margin-top: 3rem;
+    border-top: 1px solid rgba($footerText, 0.2);
+    p{
+      display:flex;
+      a{
+        margin-left: 0.5rem;
+      }
+    }
+  }
+  @keyframes parralax{
+    0%{
+     background-position: 260px;
+    }
+    100%{
+     background-position: -10000vw;
+    }
+  }
+  @keyframes moto{
+    0%{
+     transform: translateY(0) rotate(0);
+    }
+    5%{
+     transform: translateY(0) rotate(-5deg);
+    }
+    25%{
+     transform: translateY(60px) rotate(-20deg);
+    }
+    49%{
+     transform: translateY(0) rotate(-1deg);
+    }
+    51%{
+     transform: translateY(0) rotate(1deg);
+    }
+    75%{
+     transform: translateY(60px) rotate(20deg);
+    }
+    80%{
+     transform: translateY(60px) rotate(0deg);
+    }
+    98%{
+     transform: translateY(0) rotate(0);
+    }
+  }
+  @keyframes voiture{
+    0%{
+     transform: rotate(0);
+    }
+    25%{
+     transform: rotate(-5deg);
+    }
+    50%{
+     transform: rotate(0);
+    }
+    75%{
+     transform: rotate(5deg);
+    }
+    100%{
+     transform: rotate(0);
+    }
+  }
+  &__parralax{
+    position:absolute;
+    left:0;
+    top:-300px;
+    height:300px;
+    width: 100%;
+    overflow:hidden;
+    &-premierplan{      
+     background-position: 260px;
+    }
+    &-trees,
+    &-premierplan,
+    &-secondplan{
+      position:absolute;
+      inset: 0;
+      background-repeat: repeat-x;
+      background-position-y: 100% !important;
+      animation: parralax 600s linear infinite;
+    }
+    &-moto{
+      position:absolute;
+      bottom: 80px;
+      left: 50%;
+      margin-left: -250px;
+      height: 200px;
+      width: 150px;
+      background: url(https://i.ibb.co/JCGfFJd/moto-net.gif);
+      background-repeat: no-repeat;
+      transform-origin: 50% 80%;
+      animation: moto 5s linear infinite;
+    }
+    &-voiture{
+      position:absolute;
+      bottom: 10px;
+      left: 50%;
+      margin-left: 250px;
+      height: 114px;
+      width: 206px;
+      background: url(https://i.ibb.co/0Qhp4DN/voiture-fumee.gif);
+      background-repeat: no-repeat;
+      animation: voiture 1s linear infinite;
+    }
+    &-trees{
+      background-image: url(https://i.ibb.co/nQM4PGJ/arbres.png);
+      bottom: -60px;
+      animation-duration: 1000s;
+    }
+    &-premierplan{
+      background-image: url(https://i.ibb.co/RQhDWbk/premierplanv3.png);
+      animation-duration: 500s;
+      //background-position-y: 27px !important;
+    }
+    &-secondplan{
+      background-image: url(https://i.ibb.co/J3TjC4W/second-plan.png);
+      animation-duration: 600s;
+    }
+  }
+}
 	</style>
 	
     <script type="text/javascript" src="./js/vendor/modernizr.min.js"></script>
@@ -703,42 +882,94 @@
   </button>
 
   <!-- JavaScript -->
-  <script>
-    const scrollToTopButton = document.getElementById('scrollToTopButton');
-
-    // Ստուգել, թե երբ է էջը իջեցվել բավականին ներքև
-    window.addEventListener('scroll', function() {
-      if (window.scrollY > 300) { // Եթե էջը իջեցվել է 300px-ից ավելի
-        scrollToTopButton.classList.add('show'); // Ցուցադրել կնոպկան
-      } else {
-        scrollToTopButton.classList.remove('show'); // Թաքցնել կնոպկան
-      }
-    });
-
-    // Սեղմելու դեպքում բարձրանալ դեպի վեր
-    scrollToTopButton.addEventListener('click', function() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  </script>
-  <!-- Կայքի բովանդակություն -->
-
-  <div id="footer-container"></div>
-
-<script>
-  fetch("./footer/footer.html")
-
-    .then(response => response.text())
-    .then(html => {
-      document.getElementById('footer-container').innerHTML = html;
-    })
-    .catch(error => console.error('Ֆուտերը բեռնելու սխալ:', error));
-</script>
-
-  <script src="footer/footer.js"></script>
-  
+  <footer class="footer">
+	<div class="footer__parralax">
+	  <div class="footer__parralax-trees"></div>
+	  <div class="footer__parralax-moto"></div>
+	  <div class="footer__parralax-secondplan"></div>
+	  <div class="footer__parralax-premierplan"></div>
+	  <div class="footer__parralax-voiture"></div>
+	</div>
+	<div class="container">
+	  <div class="footer__columns">
+		<div class="footer__col">
+		  <h3 class="footer__col-title">
+			<i data-feather="shopping-bag"></i> <span>La boutique</span></h3>
+		  <nav class="footer__nav">
+			<ul class="footer__nav-list">
+			  <li class="footer__nav-item">
+				<a href="" class="footer__nav-link">
+				  Mentions légales
+				</a>
+			  </li>
+			  <li class="footer__nav-item">
+				<a href="" class="footer__nav-link">
+				  Politique de confidentialité
+				</a>
+			  </li>
+			  <li class="footer__nav-item">
+				<a href="" class="footer__nav-link">
+				  CGV
+				</a>
+			  </li>
+			  <li class="footer__nav-item">
+				<a href="" class="footer__nav-link">
+				  Livraisons et retours
+				</a>
+			  </li>
+			  <li class="footer__nav-item">
+				<a href="" class="footer__nav-link">
+				  Règlement concours
+				</a>
+			  </li>
+			</ul>
+		  </nav>
+		</div>
+		<div class="footer__col">
+		  <h3 class="footer__col-title">
+			<i data-feather="share-2"></i> <span>Nos réseaux</span></h3>
+		  <nav class="footer__nav">
+			<ul class="footer__nav-list">
+			  <li class="footer__nav-item">
+				<a href="" class="footer__nav-link">
+				  <i data-feather="youtube"></i><span>Youtube</span>
+				</a>
+			  </li>
+			  <li class="footer__nav-item">
+				<a href="" class="footer__nav-link">
+				  <i data-feather="facebook"></i><span>Facebook</span>
+				  
+				</a>
+			  </li>
+			  <li class="footer__nav-item">
+				<a href="" class="footer__nav-link">
+				  <i data-feather="instagram"></i><span>Instagram</span>
+				  
+				</a>
+			  </li>
+			</ul>
+		  </nav>
+		</div>
+		<div class="footer__col">
+		  <h3 class="footer__col-title">
+			<i data-feather="send"></i> <span>Contact</span></h3>
+		  <nav class="footer__nav">
+			<ul class="footer__nav-list">
+			  <li class="footer__nav-item">
+				<a href="mailto:contact.laboiserie@gmail.com" class="footer__nav-link">
+				  contact.laboiserie@gmail.com
+				</a>
+			  </li>
+			</ul>
+		  </nav>
+		</div>
+	  </div>
+		<div class="footer__copyrights">
+		  <p>Réalisé par <a href="https://twitter.com/silvereledev" target="_blank">@SilvereLeDev</a></p>
+		</div>
+	</div>
+  </footer>
+  <script  feather.replace() ></script>
 </body>
 
 </html>
