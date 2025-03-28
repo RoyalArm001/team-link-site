@@ -21,3 +21,4 @@ We take security seriously and will review any potential issues as soon as possi
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more details.
+ 

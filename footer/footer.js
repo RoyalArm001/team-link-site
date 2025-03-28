@@ -11,6 +11,12 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log("Ֆուտերի չափսերը:", footer.getBoundingClientRect());
   }
 });
+/* footer.js կամ app.min.js / script.js */
+
+window.addEventListener('load', function() {
+  document.body.classList.add('loaded');
+});
+
 
 
   
