@@ -7,5 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .catch(error => console.error("Ֆուտերի բեռնման սխալ:", error));
 });
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
 
   feather.replace()
