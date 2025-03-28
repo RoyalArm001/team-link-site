@@ -1,21 +1,23 @@
 # Security Policy
 
 ## Supported Versions
+The following versions of the project are supported with security updates:
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
-
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+- v1.x.x (current stable version)
 
 ## Reporting a Vulnerability
+If you believe you have found a vulnerability in this project, please contact us immediately. You can report vulnerabilities via email or create a GitHub issue with the label "Security".
 
-Use this section to tell people how to report a vulnerability.
+1. **Email**: security@yourdomain.com
+2. **GitHub Issues**: Please use the "Security" label for any security-related issue.
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+We take security seriously and will review any potential issues as soon as possible.
+
+## Best Practices
+- Always use HTTPS to secure the data exchanged between the client and server.
+- Ensure that any sensitive data is encrypted and not exposed in client-side code.
+- Use strong authentication methods for any login or sign-in functionality.
+- Regularly update all dependencies to minimize vulnerabilities.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for more details.

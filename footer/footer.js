@@ -7,9 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
     footer.style.minHeight = "100px";
     footer.style.opacity = "1";
     console.log("Ֆուտերը գտնվել է:", footer);
+    feather.replace()
     console.log("Ֆուտերի չափսերը:", footer.getBoundingClientRect());
   }
 });
 
 
-  feather.replace()
+  
