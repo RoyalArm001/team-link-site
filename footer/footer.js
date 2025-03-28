@@ -1,12 +1,15 @@
-document.addEventListener("DOMContentLoaded", function () {
-  fetch("footer/footer.html")  // Ստուգիր ուղին
-      .then(response => response.text())
-      .then(html => {
-          document.body.insertAdjacentHTML("beforeend", html); // Ավելացնում ենք էջի վերջում
-          console.log("Ֆուտերը բեռնվել է հաջողությամբ!");
-      })
-      .catch(error => console.error("Ֆուտերի բեռնման սխալ:", error));
+document.addEventListener('DOMContentLoaded', function() {
+  let footer = document.querySelector("footer");
+  if (footer) {
+    footer.style.display = "block";
+    footer.style.position = "relative";
+    footer.style.height = "auto";
+    footer.style.minHeight = "100px";
+    footer.style.opacity = "1";
+    console.log("Ֆուտերը գտնվել է:", footer);
+    console.log("Ֆուտերի չափսերը:", footer.getBoundingClientRect());
+  }
 });
-<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
+
 
   feather.replace()
