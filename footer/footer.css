@@ -1,179 +1,205 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
-html, body{
-  height: 100%;
+
+
+
+
+footer {
+  font-size: 13px;
+  line-height: 1.8em;
+  color: var(--fotT);
+  padding: 40px 0 20px;
 }
-body{
-  font-family: 'Open Sans', sans-serif;
+
+.footer {
+  padding: 20px;
+  background: var(--fotB);
+  box-shadow: 0 5px 35px rgba(0, 0, 0, .1);
+  border-radius: 10px;
+}
+
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer .credit a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+footer .credit a svg {
+  width: 20px; /* SVG լայնությունը */
+  height: 20px; /* SVG բարձրությունը */
+  fill: var(--fotT); /* Գույն */
+  stroke: var(--fotT); /* Կես գիծ */
+  padding-top: 3px;
+  margin-left: 5px; /* Փոքր ներս բերում լև ու աջ */
+  margin-right: 5px;
+}
+
+
+footer .mSoc svg {
+  width: 24px; /* Կատարելապես ցույց տալու համար ավելի մեծ չափեր */
+  height: 24px;
+  fill: var(--fotT);
+  stroke: var(--fotT);
+  margin-left: 5px; /* Թեթև ներքին մաս */
+  margin-right: 5px;
+}
+
+.cdtIn {
   display: flex;
-  flex-direction: column;
-  padding-top: 300px;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: calc(100%);
+  left: 0;
+  right: 0;
 }
 
-// Footer variables
-$footerBg: #000;
-$footerText: #fff;
-.container{
-  width: 100%;
-  max-width: 1600px;
-  margin: 0 auto;
+.cdtIn > * {
+  margin: 0 0;
 }
 
-.footer{
-  position:relative;
-  margin-top: 300px;
-  padding: 3rem 0;  
-  color: $footerText;
-  background : $footerBg;
-  margin-top: auto;
-  &__columns{
-    display:flex;
-    justify-content: space-between;
+.cdtIn .HTML {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.cdtIn .PageList {
+  flex-shrink: 0;
+  position: relative;
+}
+
+.cdtIn .mSoc {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.fotCd {
+  position: relative;
+  display: inline;
+}
+
+.fotCd .creator {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  bottom: -22px;
+}
+
+.ftL {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  width: calc(100% + 8px);
+  left: -4px;
+  right: -4px;
+}
+
+.ftL > * {
+  margin-right: 8px;
+}
+
+.ftL svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--fotT);
+  margin-left: 5px; /* Կարիք ունեցող փոփոխություն */
+  margin-right: 5px;
+}
+
+.ftL svg.u {
+  width: 14px;
+  height: 14px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+@media screen and (min-width: 641px) {
+  .ftL {
+      display: none;
   }
-  &__col{
-    &-title{
-      font-size: 1.6rem;
-      margin-bottom: 2rem;
-      text-transform: uppercase;
-      display: flex;
-      align-items:center;
-      * ~ span{
-        margin-left: 1rem;
-      }
-    }
+
+  .ftMn, .ftMn li {
+      display: inline-flex;
+      align-items: baseline;
   }
-  a{
-      display: flex;
-      align-items:center;
-    color: $footerText;
-    text-decoration: none;    
-      * ~ span{
-        margin-left: 1rem;
-      }
+
+  .ftMn > *:not(:last-child)::after {
+      content: '\00B7';
+      opacity: .7;
+      margin: 0 10px;
   }
-  &__nav{
-    &-list{
-      display:flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
+
+  .ftMn span {
+      opacity: .6;
   }
-  &__copyrights{
-    padding-top: 3rem;
-    margin-top: 3rem;
-    border-top: 1px solid rgba($footerText, 0.2);
-    p{
-      display:flex;
-      a{
-        margin-left: 0.5rem;
-      }
-    }
+
+  .ftMn a {
+      opacity: .8;
   }
-  @keyframes parralax{
-    0%{
-     background-position: 260px;
-    }
-    100%{
-     background-position: -10000vw;
-    }
+
+  .ftMn a:hover {
+      color: var(--linkC);
   }
-  @keyframes moto{
-    0%{
-     transform: translateY(0) rotate(0);
-    }
-    5%{
-     transform: translateY(0) rotate(-5deg);
-    }
-    25%{
-     transform: translateY(60px) rotate(-20deg);
-    }
-    49%{
-     transform: translateY(0) rotate(-1deg);
-    }
-    51%{
-     transform: translateY(0) rotate(1deg);
-    }
-    75%{
-     transform: translateY(60px) rotate(20deg);
-    }
-    80%{
-     transform: translateY(60px) rotate(0deg);
-    }
-    98%{
-     transform: translateY(0) rotate(0);
-    }
+}
+
+@media screen and (max-width: 640px) {
+  .cdtIn {
+      align-items: center;
   }
-  @keyframes voiture{
-    0%{
-     transform: rotate(0);
-    }
-    25%{
-     transform: rotate(-5deg);
-    }
-    50%{
-     transform: rotate(0);
-    }
-    75%{
-     transform: rotate(5deg);
-    }
-    100%{
-     transform: rotate(0);
-    }
+
+  .cdtIn .PageList {
+      margin-left: auto;
   }
-  &__parralax{
-    position:absolute;
-    left:0;
-    top:-300px;
-    height:300px;
-    width: 100%;
-    overflow:hidden;
-    &-premierplan{      
-     background-position: 260px;
-    }
-    &-trees,
-    &-premierplan,
-    &-secondplan{
-      position:absolute;
-      inset: 0;
-      background-repeat: repeat-x;
-      background-position-y: 100% !important;
-      animation: parralax 600s linear infinite;
-    }
-    &-moto{
-      position:absolute;
-      bottom: 80px;
-      left: 50%;
-      margin-left: -250px;
-      height: 200px;
-      width: 150px;
-      background: url(https://i.ibb.co/JCGfFJd/moto-net.gif);
-      background-repeat: no-repeat;
-      transform-origin: 50% 80%;
-      animation: moto 5s linear infinite;
-    }
-    &-voiture{
-      position:absolute;
-      bottom: 10px;
-      left: 50%;
-      margin-left: 250px;
-      height: 114px;
-      width: 206px;
-      background: url(https://i.ibb.co/0Qhp4DN/voiture-fumee.gif);
-      background-repeat: no-repeat;
-      animation: voiture 1s linear infinite;
-    }
-    &-trees{
-      background-image: url(https://i.ibb.co/nQM4PGJ/arbres.png);
-      bottom: -60px;
-      animation-duration: 1000s;
-    }
-    &-premierplan{
-      background-image: url(https://i.ibb.co/RQhDWbk/premierplanv3.png);
-      animation-duration: 500s;
-      //background-position-y: 27px !important;
-    }
-    &-secondplan{
-      background-image: url(https://i.ibb.co/J3TjC4W/second-plan.png);
-      animation-duration: 600s;
-    }
+
+  .cdtIn .mSoc > *:nth-child(4) {
+      display: none;
+  }
+
+  .ftMn {
+      position: absolute;
+      bottom: 0;
+      right: 4px;
+      width: 180px;
+      background: var(--contentB);
+      box-shadow: 0 5px 25px -3px rgba(0, 0, 0, .1);
+      font-size: 14px;
+      transition: var(--trans-1);
+      border-radius: 16px 16px 5px 16px;
+      z-index: 2;
+      opacity: 0;
+      visibility: hidden;
+  }
+
+  .ftMn li > * {
+      display: block;
+      padding: 8px 15px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      opacity: .8;
+      line-height: normal;
+  }
+
+  .ftMn li:first-child > * {
+      padding-top: 15px;
+  }
+
+  .ftMn li:last-child > * {
+      padding-bottom: 15px;
+  }
+
+  .ftI:checked ~ .ftMn,
+  .ftI:checked ~ .fCls {
+      opacity: 1;
+      visibility: visible;
+      z-index: 12;
+  }
+
+  .ftI:checked ~ .fCls {
+      z-index: 11;
   }
 }
