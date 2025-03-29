@@ -725,18 +725,20 @@
   </script>
   <!-- Կայքի բովանդակություն -->
 
-  <div id="footer-container"></div>
+    <!-- Ձեր կայքի մնացած բովանդակությունը -->
 
-<script>
-  fetch("./footer/footer.html")
+    <!-- Ֆուտեր -->
+    <div id="footer-container"></div>
 
-    .then(response => response.text())
-    .then(html => {
-      document.getElementById('footer-container').innerHTML = html;
-    })
-    .catch(error => console.error('Ֆուտերը բեռնելու սխալ:', error));
-</script>
-
+    <script src="footer/footer.js"></script>
+    <script>
+        // Բեռնել ֆուտերը դինամիկ կերպով
+        fetch('footer/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
+    </script>
   <script src="footer/footer.js"></script>
   
 </body>
