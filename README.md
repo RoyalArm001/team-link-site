@@ -20,7 +20,7 @@ This project is a complex website designed for team members. It includes various
 ## Installation Instructions
 1. Clone this repository using:
     ```
-    git clone https://github.com/yourusername/TEAM-LINK-SITE.git
+    git clone https://github.com/RoyalArm001/TEAM-LINK-SITE.git
     ```
 2. Install all the necessary libraries.
 3. Open the HTML files in your browser to start the website.
